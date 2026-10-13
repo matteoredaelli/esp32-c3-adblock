@@ -1,0 +1,9 @@
+# Dual-OTA layout for 16MB flash (ESP32-C6-N16): two app slots (firmware OTA) + LittleFS (blocklist).
+# Firmware ~1.3MB, so slots are 2MB each (generous headroom for future growth).
+# That leaves ~12MB for the blocklist (room for millions of 5-byte hash entries).
+# Name,     Type, SubType, Offset,   Size
+nvs,        data, nvs,     0x9000,   0x5000
+otadata,    data, ota,     0xe000,   0x2000
+app0,       app,  ota_0,   0x10000,  0x200000
+app1,       app,  ota_1,   0x210000, 0x200000
+spiffs,     data, spiffs,  0x410000, 0xBF0000
