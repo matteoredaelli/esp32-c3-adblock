@@ -157,3 +157,9 @@ To commit (suggested, not yet done):
 git add platformio.ini partitions_c6_16mb.csv src/main.cpp ESP32-C6-PORT.md
 git commit -m "Add ESP32-C6 (16MB) build environment and partition table"
 ```
+
+## Build the domains list
+
+```bash
+python3 tools/build_blocklist.py data/blocklist.bin      https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts      https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/ultimate-onlydomains.txt      https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/nsfw-onlydomains.txt      https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling.medium-onlydomains.txt
+```
